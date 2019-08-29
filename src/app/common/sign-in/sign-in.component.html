@@ -1,0 +1,45 @@
+<header class="shadow">
+    <nav class="navbar navbar-expand-xl navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <h1 class="tm-site-title mb-0">Stock Charts</h1>
+            </a>
+        </div>
+    </nav>
+</header>
+
+<section class="container">
+    <div class="row m-4">
+        <div class="col" style="height: 70vh;">
+            <form class="pt-4">
+                <div class="card shadow">
+                    <p class="h4 card-header">Sign-In</p>
+                    <div class="card-body bg-light">
+                        <form (ngSubmit)="onSubmit()">
+                            <div class="input-group mt-3 mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Username</span>
+                                </div>
+                                <input [(ngModel)]="username" name="username" type="text" class="form-control" />
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Password</span>
+                                </div>
+                                <input [(ngModel)]="password" name="password" type="text" class="form-control" />
+                            </div>
+                            <button type="submit" class="btn btn-success">Submit</button>
+                            <small *ngIf="invalidLogin" class="text-danger ml-2">
+                                Invalid Username/Password
+                            </small>
+                            <small class="ml-2 h6">
+                                Don't have an account, <a routerLink="/sign-up" class="text-success">Register</a>
+                            </small>
+                        </form>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
